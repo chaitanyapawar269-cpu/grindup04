@@ -1,0 +1,12 @@
+import express from 'express';
+import cors from 'cors';
+import helmet from 'helmet';
+import rateLimit from 'express-rate-limit';
+import authRoutes from './routes/auth.js';
+import studentRoutes from './routes/students.js';
+import paymentRoutes from './routes/payments.js';
+import aiRoutes from './routes/ai.js';
+import { env } from './config/env.js';
+import { errorHandler, notFound } from './middleware/errorHandler.js';
+const app = express();
+app.use(helmet()); app.use(cors({ origin: env.clientOrigin, credentials: false })); app.use(express.json({ limit: '1mb' })); app.use('/api', rateLimit({ windowMs: 15 * 60 * 1000, limit: 300, standardHeaders: true, legacyHeaders: false })); app.use('/api/auth', rateLimit({ windowMs: 15 * 60 * 1000, limit: 20, standardHeaders: true, legacyHeaders: false }), authRoutes); app.use('/api/students', studentRoutes); app.use('/api/payments', paymentRoutes); app.use('/api/ai', aiRoutes); app.get('/api/health', (request, response) => response.json({ success: true, data: { status: 'ok' } })); app.use('/api', notFound); app.use(errorHandler); export default app;

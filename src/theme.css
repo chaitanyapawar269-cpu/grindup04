@@ -1,0 +1,81 @@
+/* Shared GrindUp colour system: white canvas, ink text, orange navigation. */
+:root {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --text: #161616;
+  --muted: #676767;
+  --line: #e7e3df;
+  --nav: #f97316;
+  --lime: #161616;
+  --blue: #f97316;
+  --soft: #fff1e7;
+  color: var(--text);
+  background: var(--bg);
+}
+
+body, .app-shell, .content, .user-portal { background: #fff; color: #161616; }
+.sidebar { background: #f97316; color: #1b1b1b; }
+.logo, .logo span { color: #161616; }
+.workspace-label { border-color: rgba(22, 22, 22, .18); }
+.workspace-label b { color: #161616; }
+.workspace-label small, .sidebar nav button, .sidebar-theme { color: #3f210d; }
+.sidebar nav button:hover, .sidebar nav .active, .sidebar-theme:hover { background: #fff; color: #161616; }
+.avatar { background: #fff; color: #161616; }
+.sidebar-bottom { border-top: 1px solid rgba(22, 22, 22, .18); padding-top: 12px; }
+.logout-button { color: #7c2d12 !important; }
+.topbar { border-color: var(--line); }
+.button { background: #f97316; border-color: #f97316; color: #161616; }
+.button:hover { background: #ea580c; box-shadow: 0 5px 14px #f9731633; }
+.button-secondary { background: #fff; color: #161616; border-color: #d9d3ce; }
+.text-button, .match-score { color: #c2410c; }
+.goal-card, .match-pill { background: #fff1e7; color: #6b2c0b; }
+.goal-progress { background: #fed7aa; }
+.goal-progress i, .completion-ring { background: #f97316 !important; }
+.metric, .card, .table-card, .search-trigger, .icon-button { border-color: var(--line); box-shadow: none; }
+.candidate-card:hover, .table-row:hover { box-shadow: 0 8px 20px #f9731617; }
+.skill-list i { background: #fff1e7; color: #7c2d12; }
+.badge.interview, .badge.screening, .badge.applied, .badge.active { background: #fff1e7; color: #9a3412; }
+.profile-big-avatar, .ai-prompt .ai-icon, .ai-layout .ai-icon { background: #f97316; color: #161616; }
+.ai-prompt, .user-progress { background: #161616; }
+.ai-layout aside, .message p { background: #fff7ed; }
+.message.user p { background: #fed7aa; color: #161616; }
+.chat-input button { background: #f97316; color: #161616; }
+
+.opportunities-section { background: #fff; color: #161616; }
+.opportunities-label, .opportunities-header h2 span, .stat-box strong { color: #ea580c; }
+.opportunities-header p, .stat-box span, .category-description, .no-results p { color: #676767; }
+.stat-box, .opportunities-search, .opportunity-card, .no-results { border-color: #e7e3df; box-shadow: none; }
+.opportunities-search:focus-within { border-color: #f97316; box-shadow: 0 0 0 3px #f9731617; }
+.category-filter button { border-color: #e7e3df; color: #3f3f3f; }
+.category-filter button:hover { border-color: #f97316; color: #c2410c; }
+.category-filter button.active, .no-results button, .find-opportunity-btn { background: #f97316; border-color: #f97316; color: #161616; }
+.opportunity-card:hover { border-color: #fdba74; box-shadow: 0 16px 35px #f9731614; }
+.opportunity-icon { background: #fff1e7; }
+.job-count, .job-tag { background: #fff7ed; color: #3f3f3f; }
+.job-tag:hover { background: #ffedd5; color: #c2410c; }
+.view-category-btn, .opportunity-cta { background: #161616; }
+.view-category-btn:hover { background: #f97316; color: #161616; }
+.find-opportunity-btn:hover { background: #ea580c; }
+.opportunity-cta span { color: #fdba74; }
+
+.login-page { background: #fff; color: #161616; }
+.login-panel { background: #f97316; color: #161616; }
+.login-panel:before, .login-panel:after { border-color: #1616162b; }
+.login-logo, .login-logo span, .login-copy .eyebrow, .login-pulse > svg { color: #161616; }
+.login-copy > p:last-child, .login-pulse small, .login-credit { color: #593219; }
+.login-pulse { background: #ffffff45; border-color: #16161629; }
+.pulse-dot { background: #161616; }
+.input-wrap:focus-within { border-color: #f97316; box-shadow: 0 0 0 3px #f9731617; }
+.login-button { background: #f97316; color: #161616; }
+.login-button:hover { background: #ea580c; }
+.form-options button, .signup-copy button { color: #c2410c; }
+
+/* Dark mode remains available through the existing controls. */
+.dark { --bg: #181818; --surface: #242424; --text: #fafafa; --muted: #b4b4b4; --line: #3b3b3b; --soft: #3b2415; }
+.dark .content, .dark .app-shell { background: var(--bg); }
+.dark .sidebar { background: #ea580c; }
+.dark .sidebar nav button:hover, .dark .sidebar nav .active, .dark .sidebar-theme:hover { background: #161616; color: #fff; }
+.dark .button-secondary { background: var(--surface); color: var(--text); }
+.dark .opportunities-section { background: var(--bg); color: var(--text); }
+.dark .stat-box, .dark .opportunities-search, .dark .opportunity-card, .dark .no-results { background: var(--surface); }
+.dark .job-count, .dark .job-tag { background: #302820; color: var(--text); }

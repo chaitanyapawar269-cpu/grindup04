@@ -1,0 +1,2 @@
+export function notFound(request, response) { response.status(404).json({ success: false, error: { code: 'NOT_FOUND', message: 'The requested resource was not found.' } }); }
+export function errorHandler(error, request, response, next) { console.error(error); response.status(error.status || 500).json({ success: false, error: { code: error.code || 'SERVER_ERROR', message: error.expose ? error.message : 'Something went wrong. Please try again.' } }); }
